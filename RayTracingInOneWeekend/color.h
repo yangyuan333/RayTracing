@@ -13,6 +13,7 @@ void write_color(std::ostream& out, color pixel_color) {
 }
 
 // 左上角为(0,0)，先从左往右，再从上往下
+// color必须为0~255
 void write_color(void* image, color pixel_color, int row, int col, int width) {
     // Write the translated [0,255] value of each color component.
     const int channel = 3;
