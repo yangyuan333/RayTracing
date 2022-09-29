@@ -1,3 +1,6 @@
+/*
+* 法线测试
+*/
 #include "color.h"
 #include "ray.h"
 #include "vec3.h"
@@ -44,7 +47,7 @@ int main() {
     const int image_width = 400;
     const int image_height = static_cast<int>(image_width / aspect_ratio);
     unsigned char* image = new unsigned char[image_width * image_height * 3];
-    std::string outputPath = "./temp/img1.png";
+    std::string outputPath = "./temp/mainTest3.png";
     // Camera
     // 等价于提供 fov和radio
     // 这样直接指定不好，最好是根据相机内参进行转换
@@ -69,18 +72,19 @@ int main() {
         for (int i = 0; i < image_width; ++i) {
             ray r(origin, lower_left_corner + i * vec3(x_offset, 0, 0) + j * vec3(0, y_offset, 0) - origin);
             color pixel_color = ray_color(r);
-        }
-    }
-    for (int j = image_height - 1; j >= 0; --j) {
-        std::cerr << "\rScanlines remaining: " << j << ' ' << std::flush;
-        for (int i = 0; i < image_width; ++i) {
-            auto u = double(i) / (image_width - 1);
-            auto v = double(j) / (image_height - 1);
-            ray r(origin, lower_left_corner + u * horizontal + v * vertical - origin);
-            color pixel_color = ray_color(r);
             write_color(image, pixel_color * 255, image_height - 1 - j, i, image_width);
         }
     }
+    //for (int j = image_height - 1; j >= 0; --j) {
+    //    std::cerr << "\rScanlines remaining: " << j << ' ' << std::flush;
+    //    for (int i = 0; i < image_width; ++i) {
+    //        auto u = double(i) / (image_width - 1);
+    //        auto v = double(j) / (image_height - 1);
+    //        ray r(origin, lower_left_corner + u * horizontal + v * vertical - origin);
+    //        color pixel_color = ray_color(r);
+    //        write_color(image, pixel_color * 255, image_height - 1 - j, i, image_width);
+    //    }
+    //}
 
     stbi_write_png(outputPath.c_str(), image_width, image_height, 3, image, 0);
 

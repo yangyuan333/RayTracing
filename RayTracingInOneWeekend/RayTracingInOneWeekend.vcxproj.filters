@@ -24,6 +24,21 @@
     <ClInclude Include="ray.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="hittable.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sphere.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="hittable_list.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="rtweekend.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mainTest1.cpp">
@@ -33,6 +48,18 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="mainTest3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="mainTest4.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="mainTest5.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="mainTest6.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="mainTest7.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

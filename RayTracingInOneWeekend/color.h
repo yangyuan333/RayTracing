@@ -18,7 +18,7 @@ void write_color(void* image, color pixel_color, int row, int col, int width) {
     // Write the translated [0,255] value of each color component.
     const int channel = 3;
     unsigned char* data = static_cast<unsigned char*>(image);
-    data[row *channel* width + col*channel + 0] = static_cast<unsigned char>(pixel_color[0]);
-    data[row * channel * width + col * channel + 1] = static_cast<unsigned char>(pixel_color[1]);
-    data[row * channel * width + col * channel + 2] = static_cast<unsigned char>(pixel_color[2]);
+    data[row * channel * width + col * channel + 0] = static_cast<unsigned char>(sqrt(pixel_color[0] / 255) * 255);
+    data[row * channel * width + col * channel + 1] = static_cast<unsigned char>(sqrt(pixel_color[1] / 255) * 255);
+    data[row * channel * width + col * channel + 2] = static_cast<unsigned char>(sqrt(pixel_color[2] / 255) * 255);
 }
