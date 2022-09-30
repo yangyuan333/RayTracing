@@ -142,3 +142,8 @@ vec3 random_hemi_sphere_cosine(vec3 norm) {
     // 转换世界坐标系
     return toworld(norm, randvec);
 }
+
+// v就是入射方向，不用取反
+vec3 reflect(const vec3& v, const vec3& n) {
+    return v - 2 * dot(v, n) * n;
+}
