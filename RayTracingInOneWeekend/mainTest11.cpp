@@ -91,7 +91,7 @@ int main() {
     const int image_height = static_cast<int>(image_width / aspect_ratio);
     unsigned char* image = new unsigned char[image_width * image_height * 3];
     std::string outputPath = "./temp/mainTest11_lens.png";
-    const int samples_per_pixel = 20;
+    const int samples_per_pixel = 100;
     const int max_depth = 50;
     // World
     auto world = random_scene();
