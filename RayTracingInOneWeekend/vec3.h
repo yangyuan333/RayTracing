@@ -143,6 +143,12 @@ vec3 random_hemi_sphere_cosine(vec3 norm) {
     return toworld(norm, randvec);
 }
 
+vec3 random_in_unit_disk() {
+    double r = std::sqrt(random_double());
+    double theta = 2 * pi * random_double();
+    return vec3(r * std::cos(theta), r * std::sin(theta), 0);
+}
+
 // v就是入射方向，不用取反
 vec3 reflect(const vec3& v, const vec3& n) {
     return v - 2 * dot(v, n) * n;
