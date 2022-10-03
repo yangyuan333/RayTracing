@@ -2,6 +2,7 @@
 
 #include <cmath> // c++ version code
 #include <iostream>
+#include <algorithm>
 #include "rtweekend.h"
 
 using std::sqrt;
@@ -115,10 +116,14 @@ vec3 toworld(vec3 norm, vec3 vec) {
     vec3 B, C;
     if (std::fabs(norm.x()) > std::fabs(norm.y())) {
         double invLen = 1.0f / std::sqrt(norm.x() * norm.x() + norm.z() * norm.z());
+        //std::cout << "toworld: " << std::fabs(norm.x() * norm.x() + norm.z() * norm.z()) << std::endl;
+        //std::cout << "toworld: " << std::sqrt(std::fabs(norm.x() * norm.x() + norm.z() * norm.z())) << std::endl;
         C = vec3(norm.z() * invLen, 0.0f, -norm.x() * invLen);
     }
     else {
         float invLen = 1.0f / std::sqrt(norm.y() * norm.y() + norm.z() * norm.z());
+        //std::cout << "toworld: " << std::fabs(norm.y() * norm.y() + norm.z() * norm.z()) << std::endl;
+        //std::cout << "toworld: " << std::sqrt(std::fabs(norm.y() * norm.y() + norm.z() * norm.z())) << std::endl;
         C = vec3(0.0f, norm.z() * invLen, -norm.y() * invLen);
     }
     B = cross(C, norm);
@@ -137,6 +142,7 @@ vec3 random_hemi_sphere(vec3 norm) {
 vec3 random_hemi_sphere_cosine(vec3 norm) {
     // 局部坐标系均匀采样
     double phi = 2 * pi * random_double();
+    //double sita = std::acos(std::clamp(-1.0, 1.0, 1 - 2 * random_double())) / 2.0; // 弧度制
     double sita = std::acos(1 - 2 * random_double()) / 2.0; // 弧度制
     vec3 randvec(std::sin(sita) * std::cos(phi), std::sin(sita) * std::sin(phi), std::cos(sita));
     // 转换世界坐标系

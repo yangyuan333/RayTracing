@@ -4,6 +4,7 @@
 #include <limits>
 #include <memory>
 #include <random>
+#include <algorithm>
 
 // Usings
 
@@ -25,7 +26,8 @@ inline double degrees_to_radians(double degrees) {
 inline double random_double(double min = 0.0, double max = 1.0) {
     static std::uniform_real_distribution<double> distribution(min, max);
     static std::mt19937 generator;
-    return distribution(generator);
+    //return distribution(generator);
+    return std::clamp(distribution(generator), min, max);
 }
 
 inline double clamp(double x, double min, double max) {
