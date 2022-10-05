@@ -57,6 +57,12 @@
     <ClInclude Include="perlin.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="rtw_stb_image.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="aarect.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mainTest1.cpp">
@@ -66,6 +72,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="mainTest3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="mainTest4.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
