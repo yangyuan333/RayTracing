@@ -63,6 +63,12 @@
     <ClInclude Include="aarect.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="box.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="constant_medium.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mainTest1.cpp">
@@ -78,6 +84,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="mainTest5.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="mainTest6.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -104,13 +104,13 @@ inline vec3 unit_vector(vec3 v) {
     return v / v.length();
 }
 
-vec3 random_in_unit_sphere() {
-    while (true) {
-        auto p = vec3::random(-1, 1);
-        if (p.length_squared() >= 1) continue;
-        return p;
-    }
-}
+//vec3 random_in_unit_sphere() {
+//    while (true) {
+//        auto p = vec3::random(-1, 1);
+//        if (p.length_squared() >= 1) continue;
+//        return p;
+//    }
+//}
 
 vec3 toworld(vec3 norm, vec3 vec) {
     vec3 B, C;
@@ -147,6 +147,11 @@ vec3 random_hemi_sphere_cosine(vec3 norm) {
     vec3 randvec(std::sin(sita) * std::cos(phi), std::sin(sita) * std::sin(phi), std::cos(sita));
     // 转换世界坐标系
     return toworld(norm, randvec);
+}
+
+vec3 random_in_unit_sphere() {
+    vec3 r = random_hemi_sphere(vec3(0, 0, 1));
+    return (random_double() > 0.5) ? r : -1 * r;
 }
 
 vec3 random_in_unit_disk() {
