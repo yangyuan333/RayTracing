@@ -4,3 +4,4 @@ RayTracingInOneWeekend:
 	2. 透镜代码修改
 	3. 采用stb_img库
 	4. 光线反射采用半球面反射
+test
